@@ -36,7 +36,7 @@ harus mengubah warna tombol, tautan, judul, dan garis fokus.
 
 ### Tujuan dari tiap struktur yang saya tambahkan
 - Sedang Dikerjakan(#sedang-dikerjakan) memakai <article> berisi <h3>, <p> dan <time> tujuannya karena berisi tentang apa yang sedang saya kerjakan saat ini, sasaran pemmbaca bagian ini adalah pengungjung website saya yang penasaran apa yang sedang saya kerjakan.
-- Galeri(#galeri) memakai <ul> berisi <li> <figure> <img> <figcaption> tujuan saya menambah ini agar sasaran pembaca (pengunjung) melihat bukti visual karya yang pernah saya kerjakan.
+- Galeri(#galeri) memakai <ul> berisi <li>, <figure>, <img>, dan <figcaption> tujuan saya menambah ini agar sasaran pembaca (pengunjung) melihat bukti visual karya yang pernah saya kerjakan.
 - Lini masa (#lini-masa) memakai <ol> berisi <time> karena isinya urutan kejadian kronologis yang pernah saya jalani, agar sasaran pembaca (Pengunjung) melihat perkembangan saya dari waktu ke waktu.
 
 ### catatan penggunaan AI
