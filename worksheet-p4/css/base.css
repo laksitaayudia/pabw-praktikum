@@ -1,0 +1,38 @@
+*, *::before, *::after {
+  box-sizing: border-box;      /* width sudah mencakup padding + border */
+}
+ 
+* { margin: 0; }               /* hapus jarak bawaan; atur sendiri memakai gap */
+ 
+img { max-width: 100%; height: auto; display: block; }
+
+html {
+  font-size: 100%;            /* ikuti pengaturan pengguna, jangan dipatok */
+}
+ 
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-size: var(--text-md);
+  line-height: 1.5;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+h1 {
+  font-size: var(--text-3xl);
+  line-height: 1.2;
+}
+
+h2, h3 {
+  font-size: var(--text-xl);
+  line-height: 1.3;
+}
