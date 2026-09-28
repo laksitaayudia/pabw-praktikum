@@ -45,7 +45,7 @@ Penggunaan AI untuk mencari kontras warna yang sesuai dan beberapa bagian di CSS
 ## Pertemuan 5 — Flexbox dan Grid
 
 ### Kerangka Halaman
-| Bagian | Peran | Nilai yang saya pakai | Pilihan saya | 
+| Bagian | Peran | Nilai yang saya pakai | Pilihan saya |
 |---|---|---|
 | Kepala halaman | Logo, judul, menu berderet satu arah | auto | flex |
 | Isi dua kolom | Sidebar dan konten butuh lebar berbeda| 1fr | grid |
