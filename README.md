@@ -41,3 +41,13 @@ harus mengubah warna tombol, tautan, judul, dan garis fokus.
 
 ### catatan penggunaan AI
 Penggunaan AI untuk mencari kontras warna yang sesuai dan beberapa bagian di CSS menggunakan AI, sedangkan yang saya kerjakan sendiri adalah bagian profil.html
+
+## Pertemuan 5 — Flexbox dan Grid
+
+### Kerangka Halaman
+| Bagian | Peran | Nilai yang saya pakai | Pilihan saya | 
+|---|---|---|
+| Kepala halaman | Logo, judul, menu berderet satu arah | auto | flex |
+| Isi dua kolom | Sidebar dan konten butuh lebar berbeda| 1fr | grid |
+| Galeri kartu | Jumlah kolom menyesuaikan lebar dengan auto-fit | auto | grid |
+| Isi satu kartu | Judul, teks, tombol berderet satu arah | 16rem 1fr | flex |
