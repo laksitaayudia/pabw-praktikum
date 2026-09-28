@@ -51,3 +51,14 @@ Penggunaan AI untuk mencari kontras warna yang sesuai dan beberapa bagian di CSS
 | Isi dua kolom | grid | Sidebar dan konten butuh lebar berbeda. |
 | Galeri kartu | grid | Jumlah kolom menyesuaikan lebar dengan auto-fit. |
 | Isi satu kartu | flex | Judul, teks, tombol berderet satu arah. |
+
+### Bagian yang saya ubah 
+Saya mengubah warna tema dari website dan token warna menjadi:
+| Token | Nilai | Untuk apa |
+|---|---|---|
+| --color-primary | #0A3477 | tombol, tautan, penanda |
+| --color-fg | #0F1B33 | warna teks utama |
+| --color-bg | #FDF4D2 | latar halaman |
+| --radius-md | 0.5rem | sudut tombol dan kartu |
+| --space-4 | 1rem | jarak standar antar elemen |
+
