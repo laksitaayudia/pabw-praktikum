@@ -1,3 +1,4 @@
+
 .form-kolom {
   display: flex;
   flex-direction: column;
@@ -28,25 +29,39 @@ button {
   cursor: pointer;
 }
 
-/* :focus-visible hanya muncul saat pengguna memakai papan ketik */
 :focus-visible {
   outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 
-/* JANGAN seperti ini — pengguna papan ketik kehilangan jejak */
-/* *:focus { outline: none; } */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
 
-/* SALAH — form tampak merah padahal pengguna belum menyentuhnya */
-/* input:invalid { border-color: var(--color-danger); } */
+caption {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: padding-bottom var(--space-2);
+}
 
-/* BENAR — hanya setelah pengguna mengetik sesuatu yang tidak sah */
+th, td {
+  border: 1px solid var(--color-border);
+  padding: var(--space-2) var(--space-3);
+  overflow-wrap: anywhere;  /* agar teks panjang tidak meluber */
+}
+
+th {
+  text-align: left;
+}
+
 input:user-invalid {
   border-color: var(--color-danger);
   border-width: 2px;
 }
 
-/* Pesan galat: sembunyikan selama belum tidak-sah, tampilkan saat perlu */
+
 .pesan-galat       { display: none; color: var(--color-danger); font-size: var(--text-sm); }
 .form-kolom:has(input:user-invalid) .pesan-galat { display: block; }
 
@@ -61,3 +76,57 @@ fieldset p {
 
 input, textarea { width: 100%; }
 fieldset button { margin-top: var(--space-4); }
+
+.galeri {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+  gap: var(--space-4);
+  list-style: none;             
+  padding: 0;
+}
+
+.kartu {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+  padding: var(--card-pad);
+}
+
+.galeri .kartu{
+  display: grid;
+  align-items: start;
+  min-height: 14rem;
+}
+
+.kartu figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;  
+}
+
+.kartu img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.kartu figcaption {
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 58rem){
+    .galeri .kartu:first-child {
+      grid-column: span 2;
+    }
+}
+
+.kartu__kaki {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  text-align: right;
+}

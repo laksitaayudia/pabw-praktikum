@@ -1,27 +1,13 @@
-body {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100dvh;
-}
-
-
 header {
   padding-block: var(--space-4);
   border-bottom: 1px solid var(--color-border);
 }
 
-.header-baris {                
-  display: flex;
-  align-items: center;          
-  justify-content: space-between; 
-  gap: var(--space-4);
-  flex-wrap: wrap;              
-}
-
 nav ul {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-4);
-  list-style: none;             
+  list-style: none;
   padding: 0;
 }
 
@@ -32,30 +18,63 @@ nav a {
 
 nav a:hover { text-decoration: underline; }
 
+footer {
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-fg);
+}
 
-main {
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  row-gap: var(--space-6);
+  min-height: calc(100dvh - 2 * var(--space-4));
+}
+
+.navbar {
   display: flex;
-  flex-direction: column;
-  gap: var(--section-gap);      
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+/* wadah grid: dua area, sidebar di kiri */
+.isi {
+  display: grid;
+  grid-template-columns: 16rem 1fr;
+  grid-template-areas: 
+    "sisi utama"
+    "sisi bawah";
+  gap: var(--space-6);
+  align-items: start;
   padding-block: var(--space-6);
 }
 
-.katalog {
+.sisi {
+  grid-area: sisi;
+  min-width: 0;
+}
+
+.bawah{
+  grid-area: bawah;
+  min-width: 0;
+}
+
+.utama {
+  grid-area: utama;
+  min-width: 0;
   display: flex;
-  flex-wrap: wrap;             
+  flex-direction: column;
+  gap: var(--section-gap);
 }
 
-.kartu {
-  flex: 1 1 16rem;              
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-1);
-  padding: var(--card-pad);
-}
-
-footer {
-  margin-top: var(--space-6);
-  padding-block: var(--space-4);
-  border-top: 1px solid var(--color-border);
-  color: var(--color-fg);      
+@media (max-width: 48rem) {
+  .isi {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "utama"
+      "bawah"
+      "sisi";
+  }
 }
