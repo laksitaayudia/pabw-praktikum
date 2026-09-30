@@ -62,3 +62,6 @@ Saya mengubah warna tema dari website dan token warna menjadi:
 | --radius-md | 0.5rem | sudut tombol dan kartu |
 | --space-4 | 1rem | jarak standar antar elemen |
 
+### Catatan penggunaan AI
+saya menggunakan AI untuk kebingungan saya tentang worksheet dan membantu saya untuk menemukan kesalahan dalam penulisan code 
+
