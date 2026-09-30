@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+
+  
+  <title>Laksita Ayudia Nurislami — PABW 2026/2027</title>
+  <meta name="description" content="Halaman profil mahasiswa PABW: tentang saya, karya, dan kontak.">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css"> 
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/komponen.css"> 
+  <link rel="stylesheet" href="css/tema.css"> 
+  <link rel="stylesheet" href="css/responsif.css">
+</head>
+
+<body>
+  <input type="checkbox" id="tema" class="pengalih-tema">
+  <label for="tema" class="tombol-tema">Tema gelap</label>
+  <a class="lewati" href="#utama">Lewati ke konten utama</a>
+
+  <div class="page">
+    <header class="kepala navbar">
+      <div class="merek">
+        <h1>Laksita</h1>
+        <p class="tagline">Mahasiswa Informatika Universitas Islam Indonesia.</p>
+      </div>
+        <nav aria-label="Navigasi utama">
+          <ul>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#karya">Karya</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+            <li><a href="#sedang-dikerjakan">Sedang Dikerjakan</a></li>
+            <li><a href="#lini-masa">Lini Masa</a></li>
+            <li><a href="#galeri">Galeri</a></li>
+          </ul>
+        </nav>
+    </header>
+
+    <main id="utama" class="isi">
+      <aside class="sisi">
+        <section id="tentang">
+          <h2>Tentang saya</h2>
+            <figure class="foto">
+              <img src="media/foto-profil.jpg"
+                  alt="Foto diri saya memegang boneka."
+                  width="480" height="480" loading="lazy">
+              <figcaption>Foto profil</figcaption>
+            </figure>
+          <p>Saya berasal dari Yogyakarta, Saya memiliki minat dalam pengembangan web,
+            dan saya sedang mempelajari cara mengembangkan web dengan baik.</p>
+          
+          <div class="table-wrap">
+          <table>
+            <caption>Yang pernah saya ikuti</caption>
+            <thead>
+              <tr>
+                <th scope="col">Kegiatan</th>
+                <th scope="col">Peran</th>
+                <th scope="col">Waktu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Praktikum PABW</th>
+                <td>Peserta</td>
+                <td><time datetime="2026-09">September 2026</time></td>
+              </tr>
+              <tr>
+                <th scope="row">Praktikum FPA</th>
+                <td>Peserta</td>
+                <td><time datetime="2026-07">Juli 2026</time></td>
+              </tr>
+              <tr>
+                <th scope="row">Pemikiran Desain</th>
+                <td>Peserta</td>
+                <td><time datetime="2025">2025</time></td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </section>
+      </aside>
+
+      <div class="utama">
+        <section id="karya">
+          <h2>Karya saya</h2>
+
+          <ul>
+            <li>Aplikasi berbasis dekstop menggunakan Java dan GUI - tugas akhir semester 2.</li>
+            <li>Prototype Aplikasi IOT monitoring air - tugas akhir semester 1.</li>
+            <li>Poster Desain.</li>
+          </ul>
+        </section>
+
+        <section id="lini-masa">
+              <h2>Perjalanan saya</h2>
+              <ol class="lini">
+                  <li><time datetime="2024-12">Desember 2024</time> — Saya pertama kali belajar tentang HTML saat saya SMA.</li>
+                  <li><time datetime="2025-09">September 2025</time> — Saya menjadi mahasiswa Informatika UII.</li>
+                  <li><time datetime="2026-09">September 2026</time> — Saya kembali mempelajari HTML dan CSS dan saya membangun profil ini</li>
+              </ol>
+        </section>
+
+        <section id="galeri">
+          <h2>Galeri</h2>
+          <ul class="galeri">
+              <li class="kartu">
+              <figure>
+                  <img src="media/Aplikasi-berbasis-dekstop.jpg"
+                      alt="Tangkapan layar halaman Aplikasi berbasis dekstop menggunakan Java dan GUI tugas akhir semester 2."
+                      width="640" height="400" loading="lazy">
+                  <figcaption>Halaman Aplikasi berbasis dekstop menggunakan Java dan GUI - tugas akhir semester 2.</figcaption>
+                  <div class="kartu__kaki">
+                    <a href="media/Aplikasi-berbasis-dekstop.jpg">Lihat gambar</a>
+                  </div>
+              </figure>
+              </li>
+              <li class="kartu">
+              <figure>
+                  <img src="media/Prototype-Aplikasi-IOT-monitoring-air.png"
+                      alt="Tangkapan layar halaman Prototype Aplikasi IOT monitoring air tugas akhir semester 1."
+                      width="640" height="400" loading="lazy">
+                  <figcaption>Prototype Aplikasi IOT monitoring air - tugas akhir semester 1.</figcaption>
+                  <div class="kartu__kaki">
+                    <a href="media/Prototype-Aplikasi-IOT-monitoring-air.png">Lihat gambar</a>
+                  </div>
+              </figure>
+              </li>
+              <li class="kartu">
+              <figure>
+                  <img src="media/Poster-desain.jpg"
+                      alt="Poster Desain Yang pernah saya buat."
+                      width="640" height="400" loading="lazy">
+                  <figcaption>Poster Desain.</figcaption>
+                  <div class="kartu__kaki">
+                    <a href="media/Poster-desain.jpg">Lihat gambar</a>
+                  </div>
+              </figure>
+              </li>
+          </ul>
+        </section>
+
+        <section id="sedang-dikerjakan">
+          <h2>Sedang saya kerjakan</h2>
+          <article>
+              <h3>Halaman profil ini</h3>
+              <p>Memberi gaya pada struktur yang sudah lolos audit, memakai warna yang
+              saya turunkan dari foto saya sendiri.</p>
+              <p>Dimulai <time datetime="2026-09-21">23 September 2026</time>.</p>
+          </article>
+        </section>
+      </div>
+
+        <section id="kontak" class="bawah">
+            <h2>Hubungi saya</h2>
+            <p>Isi formulir berikut. Semua kolom bertanda wajib harus diisi.</p>
+
+            <form action="#" method="post">
+              <fieldset>
+                <legend>Data pengirim</legend>
+
+                <p>
+                  <label for="nama">Nama lengkap</label>
+                  <input id="nama" name="nama" type="text"
+                        autocomplete="name" required>
+                </p>
+
+                <p>
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email"
+                        autocomplete="email" required>
+                </p>
+
+                <p>
+                  <label for="nim">NIM</label>
+                  <input id="nim" name="nim" type="text" inputmode="numeric"
+                        pattern="[0-9]{8}" aria-describedby="nim-bantuan" required>
+                  <span id="nim-bantuan">Delapan digit angka, contoh 25523182.</span>
+                </p>
+
+                <p>
+                  <label for="pesan">Pesan</label>
+                  <textarea id="pesan" name="pesan" rows="4" required></textarea>
+                </p>
+
+                <button type="submit">Kirim</button>
+              </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer class="kaki">
+      <p>Laksita Ayudia Nurislami · 25523182 · <time datetime="2026">2026</time></p>
+    </footer>
+  </div>
+</body>
+
+</html>
