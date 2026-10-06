@@ -30,3 +30,24 @@ const formatHobi = (daftar) => daftar.join(" · ");
 console.log(buatPerkenalan(profil));
 console.log(formatHobi(profil.hobi));
 
+const daftarBacaan = [
+  { judul: "Omniscient Reader Viewpoint", tahunRilis: 2018, selesai: true },
+  { judul: "The Children of Holy Emperor", tahunRilis: 2022, selesai: true }, 
+  { judul: "Debut or Die", tahunRilis: 2021, selesai: false },
+
+];
+
+console.table(daftarBacaan);
+
+const sudahSelesai = daftarBacaan.filter((buku) => buku.selesai);
+console.table(sudahSelesai);
+
+const dicari = daftarBacaan.find((buku) => buku.judul === "Debut or Die");
+console.log(dicari);
+
+const daftarJudul = daftarBacaan.map((buku) => buku.judul);
+console.log(daftarJudul);
+
+const urut = [...daftarBacaan].sort((a, b) => a.tahunRilis - b.tahunRilis);
+console.table(urut);
+console.table(daftarBacaan);   
