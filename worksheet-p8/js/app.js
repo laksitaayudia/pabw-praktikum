@@ -51,3 +51,10 @@ console.log(daftarJudul);
 const urut = [...daftarBacaan].sort((a, b) => a.tahunRilis - b.tahunRilis);
 console.table(urut);
 console.table(daftarBacaan);   
+
+console.log(profil.hobi);
+
+
+const dariInput = "10";
+console.log(Number(dariInput) + 1);
+
