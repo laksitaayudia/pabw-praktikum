@@ -65,3 +65,9 @@ Saya mengubah warna tema dari website dan token warna menjadi:
 ### Catatan penggunaan AI
 saya menggunakan AI untuk kebingungan saya tentang worksheet dan membantu saya untuk menemukan kesalahan dalam penulisan code 
 
+### Pertemuan 8 - JavaScript 
+
+## Catatan penggunaan AI
+Saya menggunakan AI untuk berdiskusi tentang apa yang diperintahkan dalam worksheet karena saya terkadang kurang mengerti maksud dari perintah, saya menggunakan AI untuk membuat kode agar memiliki pesan galat di console, Saya juga menggunakan AI untuk beberapa kode di apps.js karena saya masih belum memahami tentang javascript. 
+Yang saya kerjakan sendiri adalah bagian data profil dan topik saya, saya menjalankan, menguji, dan memperbaiki kode di console
+
