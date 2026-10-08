@@ -174,35 +174,41 @@
             <h2>Hubungi saya</h2>
             <p>Isi formulir berikut. Semua kolom bertanda wajib harus diisi.</p>
 
-            <form action="#" method="post">
+            <form id="form-kontak" action="#" method="post" novalidate>
               <fieldset>
                 <legend>Data pengirim</legend>
 
                 <p>
                   <label for="nama">Nama lengkap</label>
-                  <input id="nama" name="nama" type="text"
-                        autocomplete="name" required>
+                  <input id="nama" name="nama" type="text" autocomplete="name"
+                        aria-describedby="galat-nama" required>
+                  <span class="pesan-galat" id="galat-nama" aria-live="polite"></span>
                 </p>
 
                 <p>
                   <label for="email">Email</label>
-                  <input id="email" name="email" type="email"
-                        autocomplete="email" required>
+                  <input id="email" name="email" type="email" autocomplete="email"
+                        aria-describedby="galat-email" required>
+                  <span class="pesan-galat" id="galat-email" aria-live="polite"></span>
                 </p>
 
                 <p>
                   <label for="nim">NIM</label>
                   <input id="nim" name="nim" type="text" inputmode="numeric"
-                        pattern="[0-9]{8}" aria-describedby="nim-bantuan" required>
+                        pattern="[0-9]{8}" aria-describedby="nim-bantuan galat-nim" required>
                   <span id="nim-bantuan">Delapan digit angka, contoh 25523182.</span>
+                  <span class="pesan-galat" id="galat-nim" aria-live="polite"></span>
                 </p>
 
                 <p>
                   <label for="pesan">Pesan</label>
-                  <textarea id="pesan" name="pesan" rows="4" required></textarea>
+                  <textarea id="pesan" name="pesan" rows="4"
+                            aria-describedby="galat-pesan" required></textarea>
+                  <span class="pesan-galat" id="galat-pesan" aria-live="polite"></span>
                 </p>
 
                 <button type="submit">Kirim</button>
+                <p id="status-form" role="status" hidden></p>
               </fieldset>
             </form>
         </section>

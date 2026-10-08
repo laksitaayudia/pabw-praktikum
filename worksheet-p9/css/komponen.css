@@ -56,14 +56,15 @@ th {
   text-align: left;
 }
 
-input:user-invalid {
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
   border-color: var(--color-danger);
   border-width: 2px;
 }
-
-
-.pesan-galat       { display: none; color: var(--color-danger); font-size: var(--text-sm); }
-.form-kolom:has(input:user-invalid) .pesan-galat { display: block; }
+.pesan-galat { color: var(--color-danger); font-size: var(--text-sm); }
+.pesan-galat:empty { display: none; }
+#status-form { font-weight: 600; }
+button:disabled { opacity: .55; cursor: not-allowed; }
 
 
 form { max-width: 32rem; }
