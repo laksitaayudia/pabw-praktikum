@@ -139,6 +139,19 @@ fieldset button { margin-top: var(--space-4); }
 }
 
 .aktif {
-  outline: 2px solid currentColor;
+  outline: 3px solid currentColor;
   outline-offset: 2px;
+  font-weight: 700;
+}
+
+#bacaan {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+#filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
 }

@@ -15,7 +15,7 @@
 }
 
 /* H.2 — pengalih tema tanpa JavaScript */
-.pengalih-tema { position: absolute; opacity: 0; pointer-events: none; }
+.pengalih-tema { position: absolute; opacity: 0; pointer-events: none; width: auto; }
 
 /* Pilihan manual HARUS berada setelah blok media query,
    supaya menang saat keduanya menyala bersamaan. */
