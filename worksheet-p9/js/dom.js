@@ -1,6 +1,6 @@
 import { daftarBacaan } from "./app.js";
 
-const wadah = document.querySelector("#daftar");
+const wadah = document.querySelector("#daftarr");
 const kosong = document.querySelector("#pesan-kosong");
 const barisFilter = document.querySelector("#filter");
  
