@@ -7,7 +7,7 @@ console.log(typeof jumlahProyek);  // "number"
 console.log(typeof belumDibuat);   
 
 
-const profil = {
+export const profil = {
   nama: "Laksita Ayudia Nurislami",
   peran: "Mahasiswa Informatika Universitas Islam Indonesia",
   hobi: ["Menggambar", "Mengedit", "Membaca"],
@@ -30,7 +30,7 @@ const formatHobi = (daftar) => daftar.join(" · ");
 console.log(buatPerkenalan(profil));
 console.log(formatHobi(profil.hobi));
 
-const daftarBacaan = [
+export const daftarBacaan = [
   { judul: "Omniscient Reader Viewpoint", tahunRilis: 2018, selesai: true },
   { judul: "The Children of Holy Emperor", tahunRilis: 2022, selesai: true }, 
   { judul: "Debut or Die", tahunRilis: 2021, selesai: false },

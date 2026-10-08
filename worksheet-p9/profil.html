@@ -108,6 +108,17 @@
               </ol>
         </section>
 
+        <section id="bacaan">
+              <h2>Daftar bacaan</h2>
+                <div id="filter">
+                    <button type="button" data-kategori="semua" class="aktif">Semua</button>
+                    <button type="button" data-kategori="selesai">Sudah selesai</button>
+                    <button type="button" data-kategori="belum">Belum selesai</button>
+                </div>
+                  <ul id="daftar"></ul>
+                  <p id="pesan-kosong" hidden>Tidak ada bacaan pada kategori itu.</p>
+        </section>
+
         <section id="galeri">
           <h2>Galeri</h2>
           <ul class="galeri">
@@ -200,7 +211,8 @@
       <p>Laksita Ayudia Nurislami · 25523182 · <time datetime="2026">2026</time></p>
     </footer>
   </div>
-<script src="js/app.js"></script>
+<script type="module" src="js/app.js"></script>
+<script type="module" src="js/dom.js"></script>
 </body>
 
 </html>
