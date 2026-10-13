@@ -1,4 +1,5 @@
 import { daftarBacaan } from "./app.js";
+import { ambilNotisia } from "./api.js";
 
 const wadah = document.querySelector("#daftar");
 const kosong = document.querySelector("#pesan-kosong");
@@ -133,3 +134,15 @@ form.addEventListener("submit", (event) => {
   sudahCobaKirim = false;
   tombolKirim.disabled = false;
 });
+
+const statusData = document.querySelector("#status-data");
+  async function coba() {
+  try {
+  const daftar = await ambilNotisia();
+  statusData.textContent = "Berhasil memuat " + daftar.length + " data";
+    } catch (galat) {
+      statusData.textContent = "Gagal memuat data: " + galat.message;
+    }
+  }
+
+  coba();
