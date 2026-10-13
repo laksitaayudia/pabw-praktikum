@@ -139,6 +139,8 @@ const statusData = document.querySelector("#status-data");
   async function coba() {
   try {
   const daftar = await ambilNotisia();
+  console.log(daftar);
+  window.daftar = daftar;
   statusData.textContent = "Berhasil memuat " + daftar.length + " data";
     } catch (galat) {
       statusData.textContent = "Gagal memuat data: " + galat.message;
