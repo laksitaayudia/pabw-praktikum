@@ -135,16 +135,32 @@ form.addEventListener("submit", (event) => {
   tombolKirim.disabled = false;
 });
 
-const statusData = document.querySelector("#status-data");
-  async function coba() {
-  try {
-  const daftar = await ambilNotisia();
-  console.log(daftar);
-  window.daftar = daftar;
-  statusData.textContent = "Berhasil memuat " + daftar.length + " data";
-    } catch (galat) {
-      statusData.textContent = "Gagal memuat data: " + galat.message;
-    }
-  }
+const wadahNotisia = document.querySelector("#daftar-notisia");
 
-  coba();
+function gambarNotisia(daftar) {
+  wadahNotisia.textContent = "";
+  daftar.forEach(function (n) {
+    const kartu = document.createElement("article");
+    kartu.className = "kartu";
+    const judul = document.createElement("h3");
+    judul.textContent = n.judul;
+    kartu.appendChild(judul);
+    wadahNotisia.appendChild(kartu);
+  });
+}
+
+async function tampilkan() {
+  wadahNotisia.textContent = "Memuat...";
+  try {
+    const daftar = await ambilNotisia();
+    if (daftar.length === 0) {
+      wadahNotisia.textContent = "Belum ada notisia";
+      return;
+    }
+    gambarNotisia(daftar);
+  } catch (galat) {
+    wadahNotisia.textContent = "Gagal memuat data: " + galat.message;
+  }
+}
+
+tampilkan();
