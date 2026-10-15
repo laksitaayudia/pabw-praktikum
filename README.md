@@ -76,10 +76,6 @@ Yang saya kerjakan sendiri adalah bagian data profil dan topik saya, saya menjal
 Saya menggunakan AI untuk berdiskusi tentang apa yang diperintahkan dalam worksheet karena saya terkadang kurang mengerti maksud dari perintah, saya menggunakan AI untuk membuat kode agar memiliki pesan galat di console
 
 ### Pertemuan 11
-## Pertemuan 11
-
-**Versi Node.js:** node vXX.X.X, npm vX.X.X
-
 **Deklarasi AI:**
 - Dibantu AI: penjelasan konsep Lembar D–F, perbaikan tombol Reset (pendengar
   klik di events.js dan selektor filter), perapian HTML, dan penghapusan fungsi
