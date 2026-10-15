@@ -1,6 +1,6 @@
-import { state, pilihKategori, setSudahCobaKirim } from "./state.js";
+import { state, pilihKategori, kembalikanBawaan, setSudahCobaKirim } from "./state.js";
 import {
-  barisFilter, form,
+  barisFilter, tombolAturUlang, form,
   adalahKolomForm, periksaKolom, semuaSah, periksaSemuaKolom,
   sembunyikanStatusForm, aturTombolKirim, fokusKolom,
   tampilkanTerimaKasih, kosongkanForm,
@@ -8,11 +8,13 @@ import {
 
 export function pasangPendengar() {
   barisFilter.addEventListener("click", (event) => {
-    const tombol = event.target.closest("button");
+    const tombol = event.target.closest("button[data-kategori]");   // tombol Reset tidak ikut
     if (!tombol) return;
 
     pilihKategori(tombol.dataset.kategori);       // state berubah, render dipanggil di dalamnya
   });
+
+  tombolAturUlang.addEventListener("click", kembalikanBawaan);   // hapus simpanan, kembali ke bawaan
 
   form.addEventListener("input", (event) => {     // satu pendengar untuk semua kolom
     const nama = event.target.id;

@@ -22,12 +22,3 @@ export function buatPerkenalan({ nama, peran }) {
 }
 
 export const formatHobi = (daftar) => daftar.join(" · ");
-
-export function saring(daftar, kategori) {
-  return daftar.filter((buku) => {
-    if (kategori === "semua") return true;
-    if (kategori === "selesai") return buku.selesai;
-    if (kategori === "belum") return !buku.selesai;
-    return false;
-  });
-}

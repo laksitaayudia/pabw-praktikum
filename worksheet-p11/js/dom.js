@@ -1,6 +1,7 @@
 const wadah = document.querySelector("#daftar");
 const kosong = document.querySelector("#pesan-kosong");
 export const barisFilter = document.querySelector("#filter");
+export const tombolAturUlang = document.querySelector("#atur-ulang");
 
 export function buatKartu(buku) {
   const li = document.createElement("li");
