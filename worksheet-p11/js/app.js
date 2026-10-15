@@ -1,4 +1,4 @@
-import { state } from "./state.js";
+import { state, muat } from "./state.js";
 import { render, gambarNotisia, tampilkanPesanNotisia } from "./dom.js";
 import { pasangPendengar } from "./events.js";
 import { ambilNotisia } from "./api.js";
@@ -7,6 +7,7 @@ render(state);
 pasangPendengar();
 
 window.state = state;   // hanya untuk memeriksa di Console: console.log(state)
+window.muat = muat;     // hanya untuk menguji di Console (hapus setelah E selesai)
 
 async function muatNotisia() {
   tampilkanPesanNotisia("Memuat...");
