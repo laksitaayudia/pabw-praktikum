@@ -9,24 +9,33 @@ export function buatKartu(buku) {
   return li;
 }
 
-export function render(daftar) {
-  wadah.textContent = "";
+// Tanda tombol aktif diturunkan dari state, bukan disimpan di halaman.
+function tandaiTombolAktif(state) {
+  document.querySelectorAll("#filter button").forEach((tombol) => {
+    tombol.classList.toggle("aktif", tombol.dataset.kategori === state.kategoriAktif);
+  });
+}
 
-  if (daftar.length === 0) {
+// Menyaring dari state: kategori dibaca dari state.kategoriAktif.
+function saring(state) {
+  return state.daftarBacaan.filter((buku) => {
+    if (state.kategoriAktif === "semua") return true;
+    if (state.kategoriAktif === "selesai") return buku.selesai;
+    if (state.kategoriAktif === "belum") return !buku.selesai;
+    return false;
+  });
+}
+
+export function render(state) {
+  tandaiTombolAktif(state);
+  wadah.textContent = "";                         // 1. kosongkan
+  const tampil = saring(state);                   // dari state, bukan argumen
+  if (tampil.length === 0) {                      // 2. keadaan kosong
     kosong.hidden = false;
     return;
   }
   kosong.hidden = true;
-
-  const fragmen = document.createDocumentFragment();
-  daftar.forEach((buku) => fragmen.append(buatKartu(buku)));
-  wadah.append(fragmen);
-}
-
-export function tandaiTombolAktif(tombolAktif) {
-  document.querySelectorAll("#filter button").forEach((tombol) => {
-    tombol.classList.toggle("aktif", tombol === tombolAktif);
-  });
+  tampil.forEach((item) => wadah.append(buatKartu(item)));   // 3. isi ulang
 }
 
 // ---------- Formulir kontak ----------

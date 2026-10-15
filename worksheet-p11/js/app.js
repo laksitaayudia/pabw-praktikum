@@ -3,8 +3,10 @@ import { render, gambarNotisia, tampilkanPesanNotisia } from "./dom.js";
 import { pasangPendengar } from "./events.js";
 import { ambilNotisia } from "./api.js";
 
-render(state.daftarBacaan);
+render(state);
 pasangPendengar();
+
+window.state = state;   // hanya untuk memeriksa di Console: console.log(state)
 
 async function muatNotisia() {
   tampilkanPesanNotisia("Memuat...");

@@ -1,7 +1,6 @@
-import { state, setKategori, setSudahCobaKirim } from "./state.js";
-import { saring } from "./data.js";
+import { state, pilihKategori, setSudahCobaKirim } from "./state.js";
 import {
-  barisFilter, form, render, tandaiTombolAktif,
+  barisFilter, form,
   adalahKolomForm, periksaKolom, semuaSah, periksaSemuaKolom,
   sembunyikanStatusForm, aturTombolKirim, fokusKolom,
   tampilkanTerimaKasih, kosongkanForm,
@@ -12,10 +11,7 @@ export function pasangPendengar() {
     const tombol = event.target.closest("button");
     if (!tombol) return;
 
-    const kategori = tombol.dataset.kategori;
-    setKategori(kategori);
-    tandaiTombolAktif(tombol);
-    render(saring(state.daftarBacaan, kategori));
+    pilihKategori(tombol.dataset.kategori);       // state berubah, render dipanggil di dalamnya
   });
 
   form.addEventListener("input", (event) => {     // satu pendengar untuk semua kolom
