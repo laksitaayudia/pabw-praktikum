@@ -1,62 +1,24 @@
-const nama = "Laksita";           // teks
-const jumlahHobi = 3;       // angka, bukan "3"
-let pilihanAktif = "semua";   // akan berubah saat disaring
- 
-console.log(typeof nama);          // "string"
-console.log(typeof jumlahProyek);  // "number"
-console.log(typeof belumDibuat);   
- 
-export const profil = {
-  nama: "Laksita Ayudia Nurislami",
-  peran: "Mahasiswa Informatika Universitas Islam Indonesia",
-  hobi: ["Menggambar", "Mengedit", "Membaca"],
-  jumlahHobi: 3,
-};
- 
-const kalimat = `Nama saya ${profil.nama}, dan saya punya ${profil.hobi.length} hobi.`;
-console.log(kalimat);
-console.log(typeof profil.nama);
-console.log(typeof profil.jumlahHobi);
- 
-function buatPerkenalan({ nama, peran }) {
-  return `${nama} — ${peran}`;
+import { state } from "./state.js";
+import { render, gambarNotisia, tampilkanPesanNotisia } from "./dom.js";
+import { pasangPendengar } from "./events.js";
+import { ambilNotisia } from "./api.js";
+
+render(state.daftarBacaan);
+pasangPendengar();
+
+async function muatNotisia() {
+  tampilkanPesanNotisia("Memuat...");
+  try {
+    const dataApi = await ambilNotisia();         // ambil
+    state.daftarNotisia = dataApi;                // masuk ke state
+    if (state.daftarNotisia.length === 0) {
+      tampilkanPesanNotisia("Belum ada notisia");
+      return;
+    }
+    gambarNotisia(state.daftarNotisia);           // baru digambar
+  } catch (galat) {
+    tampilkanPesanNotisia("Gagal memuat data: " + galat.message);
+  }
 }
- 
-const formatHobi = (daftar) => daftar.join(" · ");
- 
-console.log(buatPerkenalan(profil));
-console.log(formatHobi(profil.hobi));
- 
-export const daftarBacaan = [
-  { judul: "Omniscient Reader Viewpoint", tahunRilis: 2018, selesai: true },
-  { judul: "The Children of Holy Emperor", tahunRilis: 2022, selesai: true }, 
-  { judul: "Debut or Die", tahunRilis: 2021, selesai: false },
- 
-];
- 
-export const daftarProyek = [
-  { judul: "Aplikasi berbasis desktop (Java dan GUI)", kategori: "aplikasi" },
-  { judul: "Prototype Aplikasi IoT monitoring air",    kategori: "aplikasi" },
-  { judul: "Poster Desain",                            kategori: "desain" },
-];
- 
-console.table(daftarBacaan);
- 
-const sudahSelesai = daftarBacaan.filter((buku) => buku.selesai);
-console.table(sudahSelesai);
- 
-const dicari = daftarBacaan.find((buku) => buku.judul === "Debut or Die");
-console.log(dicari);
- 
-const daftarJudul = daftarBacaan.map((buku) => buku.judul);
-console.log(daftarJudul);
- 
-const urut = [...daftarBacaan].sort((a, b) => a.tahunRilis - b.tahunRilis);
-console.table(urut);
-console.table(daftarBacaan);   
- 
-console.log(profil.hobi);
- 
- 
-const dariInput = "10";
-console.log(Number(dariInput) + 1);
+
+muatNotisia();

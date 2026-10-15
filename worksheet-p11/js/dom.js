@@ -1,58 +1,36 @@
-import { daftarBacaan } from "./app.js";
-
-const wadah = document.querySelector("#daftarr");
+const wadah = document.querySelector("#daftar");
 const kosong = document.querySelector("#pesan-kosong");
-const barisFilter = document.querySelector("#filter");
- 
-function buatKartu(buku) {
+export const barisFilter = document.querySelector("#filter");
+
+export function buatKartu(buku) {
   const li = document.createElement("li");
   li.className = "kartu";
   li.textContent = `${buku.judul} (${buku.tahunRilis})`;   // teks, bukan HTML
   return li;
 }
- 
-function render(daftar) {
-  wadah.textContent = "";                
- 
-  if (daftar.length === 0) {             
+
+export function render(daftar) {
+  wadah.textContent = "";
+
+  if (daftar.length === 0) {
     kosong.hidden = false;
     return;
   }
   kosong.hidden = true;
- 
+
   const fragmen = document.createDocumentFragment();
-  daftar.forEach((buku) => fragmen.append(buatKartu(buku)));   
+  daftar.forEach((buku) => fragmen.append(buatKartu(buku)));
   wadah.append(fragmen);
 }
- 
-function tandaiTombolAktif(tombolAktif) {
+
+export function tandaiTombolAktif(tombolAktif) {
   document.querySelectorAll("#filter button").forEach((tombol) => {
     tombol.classList.toggle("aktif", tombol === tombolAktif);
   });
 }
- 
-function saring(kategori) {
-  return daftarBacaan.filter((buku) => {
-    if (kategori === "semua") return true;
-    if (kategori === "selesai") return buku.selesai;
-    if (kategori === "belum") return !buku.selesai;
-    if (kategori === "tes") return buku.kategori === "tes";
-    return false;                        
-  });
-}
- 
-barisFilter.addEventListener("click", (event) => {
-  const tombol = event.target.closest("button");
-  if (!tombol) return;                   
- 
-  tandaiTombolAktif(tombol);
-  render(saring(tombol.dataset.kategori));
-});
- 
-render(daftarBacaan);
 
-
-const form = document.querySelector("#form-kontak");
+// ---------- Formulir kontak ----------
+export const form = document.querySelector("#form-kontak");
 const statusForm = document.querySelector("#status-form");
 const tombolKirim = form.querySelector("button[type='submit']");
 
@@ -81,14 +59,16 @@ const aturan = {
   },
 };
 
-let sudahCobaKirim = false;
+export function adalahKolomForm(nama) {
+  return nama in aturan;
+}
 
 function pesanGalat(nama) {                       // hanya memeriksa, tidak mengubah halaman
   const { kolom, periksa } = aturan[nama];
   return periksa(kolom.value.trim());            // trim: spasi saja tetap tidak sah
 }
 
-function periksaKolom(nama) {                     // memeriksa dan menampilkan pesannya
+export function periksaKolom(nama) {              // memeriksa dan menampilkan pesannya
   const { kolom, galat } = aturan[nama];
   const pesan = pesanGalat(nama);
   galat.textContent = pesan;
@@ -97,39 +77,56 @@ function periksaKolom(nama) {                     // memeriksa dan menampilkan p
   return pesan === "";
 }
 
-function semuaSah() {
+export function semuaSah() {
   return Object.keys(aturan).every((nama) => pesanGalat(nama) === "");
 }
 
-form.addEventListener("input", (event) => {       // satu pendengar untuk semua kolom
-  const nama = event.target.id;
-  if (!(nama in aturan)) return;
+// Memeriksa semua kolom; mengembalikan nama kolom yang bermasalah.
+export function periksaSemuaKolom() {
+  return Object.keys(aturan).filter((nama) => !periksaKolom(nama));
+}
+
+export function sembunyikanStatusForm() {
   statusForm.hidden = true;
-  if (sudahCobaKirim) {
-    periksaKolom(nama);
-    tombolKirim.disabled = !semuaSah();
-  }
-});
+}
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();                         // baris pertama: halaman tidak dimuat ulang
-  sudahCobaKirim = true;
+export function aturTombolKirim(nonaktif) {
+  tombolKirim.disabled = nonaktif;
+}
 
-  const bermasalah = Object.keys(aturan).filter((nama) => !periksaKolom(nama));
-  if (bermasalah.length > 0) {
-    statusForm.hidden = true;
-    tombolKirim.disabled = true;
-    aturan[bermasalah[0]].kolom.focus();          // pindah ke kolom pertama yang bermasalah
-    return;
-  }
+export function fokusKolom(nama) {
+  aturan[nama].kolom.focus();
+}
 
+export function tampilkanTerimaKasih() {
   statusForm.textContent = `Terima kasih, ${aturan.nama.kolom.value.trim()}. Pesan Anda sudah tercatat.`;
   statusForm.hidden = false;
+}
+
+export function kosongkanForm() {
   form.reset();
   Object.keys(aturan).forEach((nama) => {
     aturan[nama].galat.textContent = "";
     aturan[nama].kolom.removeAttribute("aria-invalid");
   });
-  sudahCobaKirim = false;
   tombolKirim.disabled = false;
-});
+}
+
+// ---------- Notisia (data dari api.js) ----------
+const wadahNotisia = document.querySelector("#daftar-notisia");
+
+export function tampilkanPesanNotisia(teks) {
+  wadahNotisia.textContent = teks;
+}
+
+export function gambarNotisia(daftar) {
+  wadahNotisia.textContent = "";
+  daftar.forEach(function (n) {
+    const kartu = document.createElement("article");
+    kartu.className = "kartu";
+    const judul = document.createElement("h3");
+    judul.textContent = n.judul;
+    kartu.appendChild(judul);
+    wadahNotisia.appendChild(kartu);
+  });
+}
