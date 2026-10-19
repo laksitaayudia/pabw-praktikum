@@ -6,7 +6,6 @@ const KUNCI = "pabw-p11";
 const VERSI = 2;
 const KATEGORI_BAWAAN = "semua";
 
-// Hanya yang perlu diingat yang disimpan: pilihan kategori. Bukan data besar, bukan data pribadi.
 export function simpan(state) {
   const isi = { versi: VERSI, kategoriAktif: state.kategoriAktif };
   localStorage.setItem(KUNCI, JSON.stringify(isi));
