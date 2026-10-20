@@ -65,20 +65,28 @@ Saya mengubah warna tema dari website dan token warna menjadi:
 ### Catatan penggunaan AI
 saya menggunakan AI untuk kebingungan saya tentang worksheet dan membantu saya untuk menemukan kesalahan dalam penulisan code 
 
-### Pertemuan 8 - JavaScript 
+## Pertemuan 8 - JavaScript 
 
-## Catatan penggunaan AI
+### Catatan penggunaan AI
 Saya menggunakan AI untuk berdiskusi tentang apa yang diperintahkan dalam worksheet karena saya terkadang kurang mengerti maksud dari perintah, saya menggunakan AI untuk membuat kode agar memiliki pesan galat di console, Saya juga menggunakan AI untuk beberapa kode di apps.js karena saya masih belum memahami tentang javascript. 
 Yang saya kerjakan sendiri adalah bagian data profil dan topik saya, saya menjalankan, menguji, dan memperbaiki kode di console
 
-### PERTEMUAN 9
-## Catatan penggunaan AI
+## PERTEMUAN 9
+### Catatan penggunaan AI
 Saya menggunakan AI untuk berdiskusi tentang apa yang diperintahkan dalam worksheet karena saya terkadang kurang mengerti maksud dari perintah, saya menggunakan AI untuk membuat kode agar memiliki pesan galat di console
 
-### Pertemuan 11
-**Deklarasi AI:**
+## Pertemuan 11
+### Deklarasi AI:
 - Dibantu AI: penjelasan konsep Lembar D–F, perbaikan tombol Reset (pendengar
   klik di events.js dan selektor filter), perapian HTML, dan penghapusan fungsi
   saring yang ganda di data.js.
 - Saya kerjakan sendiri: pemecahan lima modul, objek state dan fungsi pengubah,
   pengujian simpanan rusak lewat Console
+
+## Pertemuan 12
+### versi perkakas
+node -v = 24.22.0
+npm -v = 11.19.1
+
+### Deklarasi AI
+Pemindahan Vue pada P12 dikerjakan dengan bantuan AI, dan penjelasan worksheet dengan arahan langkah demi langkah, Saya menjalankan, menguji dan memeriksa hasilnya sendiri.
