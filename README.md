@@ -82,3 +82,11 @@ Saya menggunakan AI untuk berdiskusi tentang apa yang diperintahkan dalam worksh
   saring yang ganda di data.js.
 - Saya kerjakan sendiri: pemecahan lima modul, objek state dan fungsi pengubah,
   pengujian simpanan rusak lewat Console
+
+### Pertemuan 12
+# versi perkakas
+node -v = 24.22.0
+npm -v = 11.19.1
+
+# Deklarasi AI
+Pemindahan Vue pada P12 dikerjakan dengan bantuan AI, dan penjelasan worksheet dengan arahan langkah demi langkah, Saya menjalankan, menguji dan memeriksa hasilnya sendiri.
